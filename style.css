@@ -1,0 +1,428 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: .5fr auto auto auto;
+    min-height: 100vh;
+}
+
+header {
+    background-color: rgb(51, 102, 153, .5);
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/9/91/Melbourne_as_viewed_from_the_Shrine%2C_January_2019.png");
+    background-size: cover;
+    background-blend-mode:darken;
+    background-position: 100% 40%;
+    font-family: 'Contrail One', cursive;
+    max-height: 200px;
+}
+
+.featured-span, .latest-span, .weather-span {
+    display: none;
+    background-color: #ffcc66;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 3px;
+}
+
+.latest {
+    display: flex;
+    flex-direction: column;
+}
+
+.featured {
+    display: none;
+}
+
+h1 {
+    text-shadow: 3px 3px black;
+    font-size: 2.8rem;
+    padding: 0;
+    color: #ffffff;
+    text-align: center;
+}
+
+.nav-bar {
+    z-index: 55;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    min-height:40px;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+nav a {
+    display: grid;
+    align-items: center;
+    color: black;
+    text-decoration: none;
+    margin: 5px 10px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ffcc66;
+}
+
+.sidebar {
+    display: none;
+}
+
+footer {
+    background-color: #336699;
+}
+
+#latest-1 {
+    background-color: rgb(255, 255, 255);
+    height: 100%;
+}
+
+#latest-1 h2 {
+    margin: 10px 0 0 5px;
+}
+
+#latest-1 p {
+    margin-left: 5px;
+}
+
+.latest a {
+    color: black;
+    text-decoration: none;
+}
+
+.latest-item p {
+    padding-left: 5px;
+}
+
+.latest-item:nth-child(odd) {
+    background-color: rgb(243, 243, 243);
+}
+
+.latest-item a {
+    text-decoration: none;
+    color: black;
+}
+
+
+.latest-item img {
+    display: none;
+}
+
+.load {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: rgb(236, 236, 236);
+    order: 100;
+}
+
+.load:hover {
+    color: white;
+}
+
+.about {
+    color: white;
+    margin: 10px;
+}
+
+.about p, h3 {
+    margin: 10px 5px;
+}
+
+#one-p {
+    padding: 0;
+}
+
+@media only screen and (min-width: 1000px) {
+    .container {
+        grid-template-rows: 2fr .5 auto auto;
+        grid-template-areas: 
+        "header"
+        "nav"
+        "main"
+        "footer"
+    }
+    main {
+        grid-area: 'main';
+        margin: 20px 50px;
+        display: grid;
+        grid-template-columns: 1.9fr 1fr .75fr;
+    }
+
+    .featured-span, .latest-span, .weather-span {
+        display: block;
+    }
+
+    h1 {
+        text-align: left;
+        margin-left: 20px;
+    }
+
+/* -------- LATEST --------- */ 
+
+    .latest-item img {
+        display: block;
+    }
+
+    .latest-item {
+        display: grid;
+        grid-template-columns: auto auto;
+        border-bottom: 1px solid grey;
+    }
+
+    .latest-item:nth-child(odd) {
+        background-color: rgb(255, 255, 255);
+    }
+
+    #latest-1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        position: relative;
+        border: none;
+        height: auto;
+        color: black;
+        transition: .2s;
+        cursor: pointer;
+        margin-bottom: 5px;
+    }
+
+    #latest-1 img {
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+        object-position: 90% 1%;
+    }
+    
+    .pic-container img {
+        margin: 15px 10px 15px 0;
+        width: 200px;
+        height: 150px;
+        object-fit: cover;
+    } 
+
+    #one-p {
+        margin: 0 0 5px 5px;
+    }
+
+    .featured-item {
+        margin: 10px 0;
+    }
+
+    .featured-item:hover img {
+        opacity: .9;
+        cursor: pointer
+    }
+
+    .featured-item:last-of-type {
+        border: none;
+    }
+    
+    .featured-item p {
+        margin: 8px 0 10px 0;
+    }
+    
+    .featured-item h3 {
+        margin-bottom: 0;
+        margin-left: 0px;
+    }
+
+    .latest-item:last-of-type {
+        border: none;
+    }
+    
+    .overlay {
+        background-color: rgba(255, 255, 255, 0.575);
+        z-index: 1;
+        position: absolute;
+    }
+
+    #first-img {
+        width: 100%;
+    }
+
+    #latest-1:hover {
+        opacity: .9;
+    }
+    
+    #latest-1 h2 {
+        margin: 5px 0 0 5px;
+    }
+
+/* ----- FEATURED -----*/
+
+    .featured {
+        display: flex;
+        margin: 0 20px;
+        flex-direction: column;
+    }
+    
+    .featured img {
+        margin-bottom: 0;
+        width: 100%;
+        height: 250px;
+        object-fit:cover;
+    }
+    
+    .featured-item:hover img {
+        opacity: .9;
+    }
+    
+    .featured-item {
+        border-bottom: 1px solid grey;
+    }
+    
+    .featured-item h3 {
+        margin-top: 5px;
+    }
+    
+    .nav-bar {
+        z-index: 55;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(255, 255, 255);
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        min-height: 50px;
+    }
+    
+    nav {
+        grid-area: 'nav';
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        
+    }
+    
+    nav a {
+        display: grid;
+        align-items: center;
+        color: black;
+        text-decoration: none;
+        margin: 0 25px;
+        height: 100%;
+        font-size: large;
+        font-weight: bold;
+    }
+    
+    nav a:hover {
+        color: #ffcc66;
+    }
+
+    .sidebar {
+        background-color: #336699;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+    }
+    
+    .sidebar h5 {
+        font-family: 'Contrail One', cursive;
+        color: rgb(255, 255, 255);
+        text-shadow: 2px 2px black;
+        font-size: 2em;
+        margin: 5px;
+        text-align: center;
+        font-weight: 600;
+        user-select: none; 
+    }
+    
+    .weather-tab {
+        text-align: center;
+        flex-direction: column;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        margin-top: 10px;
+        width: 93%;
+        height: auto;
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+    }
+    
+    .weather-tab h2 {
+        margin: 5px 0 8px;
+    }
+    .weather-tab p {
+        margin: 0;
+    }
+    
+    select {
+        margin: 8px 0 5px;
+    }
+    
+    .ads {
+        margin: 30px;
+        background-color: rgb(0, 0, 0);
+        min-height: 60%;
+        width: 93%;
+        color: white;
+        text-align: center;
+    }
+    
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+    
+    .placeholder {
+        margin: 5px;
+    }
+    
+    .thoughts {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        width: 93%;
+        min-height: 200px;
+        background: rgb(255, 255, 255);
+        margin: 5px;
+        user-select: none; 
+    }
+    
+    .thoughts p {
+        padding: 5px;
+        margin: 0;
+    }
+    
+    .thoughts h4 {
+        padding: 5px 0;
+        margin: 0;
+    }
+    
+    #up {
+        cursor: pointer;
+    }
+    
+    #down {
+        cursor: pointer;
+    }
+    
+    .sticky {
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+
+}
