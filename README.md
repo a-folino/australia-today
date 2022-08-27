@@ -1,4 +1,4 @@
 # australiaToday
-News site fetching from APIs to display articles around the net.
+News site I made fetching from APIs to display news and weather, also fetching from a local json file utilising a scroll function.
 
-Site is still under construction, needs refactoring 
+
