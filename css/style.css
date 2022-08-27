@@ -1,0 +1,247 @@
+:root {
+    --article--text: 'Roboto', sans-serif;
+    --article--heading: 'Contrail One', serif;
+    --heading--color: #ffcc66;
+    --background--color: rgb(254, 254, 254);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--article--text);
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    min-height: 110px;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/9/91/Melbourne_as_viewed_from_the_Shrine%2C_January_2019.png');
+    background-size: cover;
+    background-position: 100% 45%;
+    color: white;
+    font-size: 1.4rem;
+    
+}
+
+h1 {
+    font-family: var(--article--heading);
+    text-shadow: 3px 3px 3px black;
+}
+
+p {
+    margin-top: 5px;;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 8px;
+    background-color: var(--background--color);
+}
+
+a {
+    color: black;
+    margin: 5px;
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--heading--color);
+}
+
+main {
+    display: grid;
+    grid-template-rows: repeat(4, auto);
+    padding: 0 10px;
+    min-height: 100vh;
+    background-color: var(--background--color);
+}
+
+.heading {
+    display: flex;
+    justify-content: center;
+    background-color: var(--heading--color);
+    width: 100%;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+#latest {
+    padding: 10px;
+}
+
+#latest img {
+    width: 100%;
+}
+
+.latest-article {
+    margin: 10px 0;
+}
+
+#featured {
+    display: none;
+}
+
+#sidebar {
+    display: none;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    min-height: 150px;
+}
+
+@media screen and (min-width: 650px) { 
+    main {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    a {
+        margin: 10px 30px;
+        font-size: 1.2rem;
+    }
+
+    #featured {
+        display: block;
+        padding: 10px;
+    }
+
+    .featured-article {
+        margin: 10px 0;
+    }
+
+    #featured img {
+        width: 100%;
+        max-height: 300px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    main {
+        grid-template-columns: 2.5fr 2fr 1fr;
+        padding: 10px 35px;
+    }
+
+    header {
+        justify-content: flex-start;
+        font-size: 1.7rem;
+    }
+
+    img:hover {
+        opacity: .95;
+    }
+
+    .heading {
+        font-size: 1.5rem;
+    }
+
+    #sidebar {
+        display: block;
+        margin: 10px;
+        background-color: #336699;
+        box-shadow: 0 0 6px rgba(0,0,0,.5);
+    }
+    
+    .weather-tab {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        margin: 10px;
+        padding: 10px;
+        background-color: var(--background--color);
+    }
+    
+    .weather-tab img {
+        height: 60px;
+        width: 60px;
+        margin-bottom: 5px;
+    }
+
+    .weather {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    
+    .ads {  
+        display: flex;
+        justify-content: center;
+        background-color: black;
+        color: white;
+        margin: 10px;
+        height: 3000px;
+        overflow: hidden;
+    }
+
+    .thoughts-tab {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        padding: 10px;
+        background: var(--background--color);
+        margin: 10px;
+        user-select: none; 
+    }
+
+    .thoughts-tab h2 {
+        margin-bottom: 10px;
+    }
+
+    .thoughts {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        height: 200px;
+        margin: 0;
+        text-align: center;
+    }
+    
+    #up {
+        cursor: pointer;
+    }
+    
+    #down {
+        cursor: pointer;
+    }
+
+    .featured-article {
+        display: flex;
+        justify-content: center;
+        border-bottom: 1px solid black;
+    }
+
+    .featured-article a {
+        font-size: 15px;
+        margin: 0 10px 10px 10px;
+    }
+
+    .featured-article:last-child {
+        border: none;
+    }
+
+    #featured img {
+        width: 50%;
+        margin-bottom: 40px;
+    }
+}

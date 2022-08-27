@@ -1,0 +1,167 @@
+:root {
+    --article--text: 'Roboto', sans-serif;
+    --article--heading: 'Contrail One', serif;
+    --heading--color: #ffcc66;
+    --background--color: rgb(254, 254, 254);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--article--text);
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    min-height: 110px;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/9/91/Melbourne_as_viewed_from_the_Shrine%2C_January_2019.png');
+    background-size: cover;
+    background-position: 100% 45%;
+    color: white;
+    font-size: 1.4rem;
+}
+
+h1 {
+    font-family: var(--article--heading);
+    text-shadow: 3px 3px 3px black;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 8px;
+    --background--color: rgb(254, 254, 254);
+}
+
+a {
+    color: black;
+    margin: 5px;
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--heading--color)
+}
+
+main {
+    display: grid;
+    min-height: 100vh;
+    --background--color: rgb(254, 254, 254);
+}
+
+.heading {
+    display: flex;
+    justify-content: center;
+    background-color: var(--heading--color);
+    width: 100%;
+    font-weight: bold;
+}
+
+#latest {
+    padding: 10px;
+}
+
+#latest img {
+    width: 100%;
+}
+
+.latest-article {
+    margin: 10px 0;
+}
+
+span {
+    margin-left: 20px;
+}
+
+.heading {
+    font-size: 1.25rem;
+}
+
+#sidebar {
+    display: none;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    min-height: 150px;
+}
+
+@media screen and (min-width: 650px) { 
+    main {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    a {
+        margin: 10px 30px;
+        font-size: 1.2rem;
+    }
+
+    .ads {  
+        display: flex;
+        justify-content: center;
+        background-color: black;
+        color: white;
+        margin: 10px;
+        height: 3000px;
+        overflow: hidden;
+    }
+
+    #sidebar {
+        display: block;
+        margin: 10px;
+        background-color: #336699;
+        box-shadow: 0 0 6px  rgba(0,0,0,.5);
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    main {
+        grid-template-columns: 3fr 1fr;
+        padding: 10px 35px;
+    }
+
+    header {
+        justify-content: flex-start;
+        font-size: 1.7rem;
+    }
+
+    img:hover {
+        opacity: .95;
+    }
+
+    .heading {
+        font-size: 1.5rem;
+    }
+
+    #latest {
+        padding: 10px;
+    }
+
+    #latest img {
+        width: 30%;
+    }
+
+    .latest-article {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        max-height: 200px;
+        overflow: hidden;
+    } 
+}
