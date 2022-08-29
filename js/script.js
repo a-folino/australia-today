@@ -115,7 +115,7 @@ function thoughtsScroll(data, value) {
     thoughts.innerHTML = person;
 }
 
-setTimeout(() => thoughtsScroll(fetchResponse, personNumber), 100);
+setTimeout(() => thoughtsScroll(fetchResponse, personNumber), 800);
 
 up.addEventListener('click', () => {
     if (personNumber != 5) {
