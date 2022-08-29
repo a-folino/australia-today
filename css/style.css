@@ -26,7 +26,6 @@ header {
     background-position: 100% 45%;
     color: white;
     font-size: 1.4rem;
-    
 }
 
 h1 {
@@ -131,7 +130,7 @@ footer {
     }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1300px) {
     main {
         grid-template-columns: 2.5fr 2fr 1fr;
         padding: 10px 35px;
