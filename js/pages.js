@@ -5,7 +5,7 @@ let url = `https://newsapi.org/v2/top-headlines?country=au&category=${category}&
 const fetchNews = async () => {
     const response = await fetch(url);
     const data = await response.json();
-    return newsArticles(data);
+    return setTimeout(() => {newsArticles(data)}, 600);
 }
 
 fetchNews();
